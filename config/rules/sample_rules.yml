@@ -1,0 +1,67 @@
+# ThreatLens-Kali Detection Rules
+# Sample YAML-based detection rule definitions
+
+rules:
+  - id: RULE_001
+    name: "Suspicious SSH Brute Force"
+    description: "Detects multiple failed SSH login attempts"
+    severity: high
+    patterns:
+      - field: auth.log
+        regex: 'Failed password for .* ssh'
+        threshold: 5
+        time_window: 300
+    mitre_technique: T1110.001
+    mitre_tactic: "Credential Access"
+
+  - id: RULE_002
+    name: "Privilege Escalation via Sudo"
+    description: "Detects unauthorized sudo privilege escalation attempts"
+    severity: critical
+    patterns:
+      - field: auth.log
+        regex: 'sudo.*COMMAND=.*password required'
+        threshold: 3
+        time_window: 600
+    mitre_technique: T1548
+    mitre_tactic: "Privilege Escalation"
+
+  - id: RULE_003
+    name: "Suspicious Process Execution"
+    description: "Detects execution of known malicious process names"
+    severity: medium
+    patterns:
+      - field: process_logs
+        regex: '(nc|ncat|bash)\s+-[a-z]*e\s*(sh|bash|cmd)'
+        threshold: 1
+    mitre_technique: T1059
+    mitre_tactic: "Execution"
+
+  - id: RULE_004
+    name: "Suspicious Network Connection"
+    description: "Detects outbound connections to known C2 infrastructure"
+    severity: critical
+    patterns:
+      - field: network_logs
+        regex: 'established.*ESTABLISHED.*dst_ip:(192\.168\.1\.[0-9]+|10\.0\.0\.[0-9]+)'
+        threshold: 1
+    mitre_technique: T1571
+    mitre_tactic: "Command and Control"
+
+  - id: RULE_005
+    name: "Unauthorized File Access"
+    description: "Detects access to sensitive files by non-privileged users"
+    severity: high
+    patterns:
+      - field: audit_logs
+        regex: 'opened.*(/etc/shadow|/etc/passwd|/root|/var/log)'
+        threshold: 2
+        time_window: 300
+    mitre_technique: T1005
+    mitre_tactic: "Collection"
+
+# Configuration for rule evaluation
+config:
+  alert_enabled: true
+  aggregation_enabled: true
+  correlation_enabled: true
